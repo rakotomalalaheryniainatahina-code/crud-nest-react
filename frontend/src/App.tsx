@@ -212,7 +212,7 @@ function App() {
       : 'bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100'
       }`}>
       <div className="max-w-7xl mx-auto space-y-8">
-        {/* Header */}
+
         <div className="flex justify-between items-center backdrop-blur-lg py-3 rounded-lg">
           <div className="flex gap-4 items-center">
             <img src="/logo.png" className="w-16 h-16" alt="logo" />
@@ -322,7 +322,6 @@ function App() {
           </div>
         </div>
 
-        {/* Search Bar */}
         <div
           className={`w-full flex items-center gap-2 border shadow-sm rounded-md border-slate-200 focus:border-blue-400 focus:ring-blue-400/20 transition-all duration-300 ${isDarkMode ? 'bg-gray-800/50 backdrop-blur-xl text-gray-200' : 'bg-white/80 backdrop-blur-xl'
             }`}
@@ -336,7 +335,6 @@ function App() {
           />
         </div>
 
-        {/* Table */}
         <div className={`backdrop-blur-sm rounded-md shadow-sm overflow-hidden transition-all duration-300 ${isDarkMode
           ? 'bg-gray-800/70 border border-gray-600/20'
           : 'bg-white/70 border border-white/20'
@@ -421,7 +419,7 @@ function App() {
       <div className="max-w-7xl top-[100%] m-auto sticky flex felx-row items-center justify-between">
         <p>© RAKOTOMALALA <a className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent" target="_blank" href="https://orione-tech.vercel.app">Hery Niaina Tahina</a></p>
         <div>
-          <a href="https://github.com/rakotomalalaheryniainatahina-code/crud-django-react/" target="_blank">
+          <a href="https://github.com/rakotomalalaheryniainatahina-code/crud-nest-react" target="_blank">
             <Github />
           </a>
         </div>
