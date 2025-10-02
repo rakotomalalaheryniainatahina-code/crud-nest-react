@@ -3,7 +3,7 @@
 import { Button, Dialog, Flex, Table, Text, TextField } from "@radix-ui/themes"
 import api from "./api/api"
 import { useEffect, useState } from "react"
-import { Pencil1Icon, MoonIcon, SunIcon, MagnifyingGlassIcon, PlusIcon } from "@radix-ui/react-icons"
+import { MoonIcon, SunIcon } from "@radix-ui/react-icons"
 import { CirclePlus, Github, Pencil, Search, Trash2, UserRound } from "lucide-react"
 
 type Users = {
