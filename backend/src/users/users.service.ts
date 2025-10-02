@@ -6,8 +6,8 @@ import { Users, UsersDocument } from 'src/models/users.models';
 
 @Injectable()
 export class UsersService {
-    constructor(@InjectModel(Users.name) private UsersModel: Model<UsersDocument>) {}
-    Add(body: UserDto ) {
+    constructor(@InjectModel(Users.name) private UsersModel: Model<UsersDocument>) { }
+    Add(body: UserDto) {
         return this.UsersModel.create(body);
     }
 
@@ -16,28 +16,39 @@ export class UsersService {
     }
 
     FindOne(id: string) {
-        return this.UsersModel.findOne({_id : id}); ;
+        return this.UsersModel.findOne({ _id: id });;
     }
 
-    Update(id : string , body: UserDto) {
+    Update(id: string, body: UserDto) {
         return this.UsersModel.findByIdAndUpdate(
             { _id: id },
-            {$set : body},
+            { $set: body },
             { new: true },
         );
     }
 
-    Delete(id : string) {
-        return this.UsersModel.deleteOne({_id : id});
+    Delete(id: string) {
+        return this.UsersModel.deleteOne({ _id: id });
     }
 
-    Search(key : string) {
+    Search(key: string) {
         const keyword = key ? {
             $or: [
                 { fullname: { $regex: key, $options: 'i' } },
                 { email: { $regex: key, $options: 'i' } },
             ],
         } : {}
-        return this.UsersModel.find(keyword) ;
+        return this.UsersModel.find(keyword);
     }
+
+    async countUsers(): Promise<number> {
+        try {
+            return await this.UsersModel.countDocuments();
+        } catch (error) {
+            console.error('Error counting users:', error);
+            throw error;
+        }
+    }
+
+
 }
